@@ -1,4 +1,4 @@
-# Prueba tecnica Front-End – zara.com
+# Prueba tecnica Frontend – zara.com
 
 En este documento podrá encontrar los enlaces a la documentacion requerida como parte de la prueba tecnica:
 
