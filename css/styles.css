@@ -1,0 +1,369 @@
+html,
+body{
+	padding: 0px;
+	margin: 0px;
+	display: flex;
+	flex-direction: column;
+}
+
+@media screen and (min-width: 320px){
+
+	/* First section */
+	.full-width-background{
+		height: 120vh;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 30% 80%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.look-1{
+		background-image: url(../assets/look1-look1.st.jpg);
+	}
+
+	.grid-3-3{
+		width: 100%;
+		height: 80%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 50%);
+	}
+
+	.grid-child-flex{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.center-top-alignment{
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+
+	.center-alignment{
+		justify-content: center;
+	}
+
+	.grid-image{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.hidden{
+		visibility: hidden;
+	}
+
+	.flex-full-row{
+		height: 20%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.flex-row-image{
+		width: 80%;
+	}
+
+	.scale-down{
+		width: 75%;
+		margin-bottom: 5px;
+	}
+
+	/* Second section */
+	.sticky-parallax{
+		height: 300vh;
+		position: relative;
+	}
+
+	.sticky-image{
+		background-image: url(../assets/look2-look2.st.jpg);
+		background-position: center;
+		background-size: cover;
+		position: sticky;
+		top: 0;
+		height: 100vh;
+		width: 50vw;
+		margin: 0 auto;
+	}
+
+	.svg-absolute{
+		position: absolute;
+		width: 80px;
+		top: 100vh;
+	}
+
+	.left-text{
+		left: 5vw
+	}
+
+	.right-text{
+		right: 4vw
+	}
+
+	.sticky-cover{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		background-attachment: fixed;
+		background-color: white;
+	}
+
+	.split-background{
+		display: flex;
+		justify-content: space-around;
+		height: 100vh;
+		margin-top: 30px
+	}
+
+	.split-view-image-x{
+		width: 40%;
+		background-size: 100vh;
+		background-attachment: fixed;
+	}
+	
+	.left-image{
+		background-position-x: 88%;
+	}
+
+	.right-image{
+    	background-position-x: -19%;
+	}
+
+	.look-3{
+		background-image: url(../assets/look3-look3.st.jpg)
+	}
+
+	.look-4{
+		background-image: url(../assets/look4-look4.st.jpg);
+	}
+
+	/* sections 3, 4, 6, 7 */
+	.column-1-row-3{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.section-svg{
+		height: 10vh;
+		background-repeat: no-repeat;
+		background-size: 60px;
+		background-position: center;
+	}
+
+	.l05{
+		background-image: url(../assets/look5-l05-text.svg);
+	}
+
+	.knitwear{
+		background-image: url(../assets/look5-knitwear-text.svg);	
+	}
+	
+	.section-center-image{
+		height: 80vh;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+	}
+
+	.look-5{
+		background-image: url(../assets/look5-look5.st.jpg);
+	}
+
+	.look-6{
+		background-image: url(../assets/look6-look6.st.jpg)
+	}
+
+	.l06{
+		background-image: url(../assets/look6-l06-text.svg)
+	}
+
+	.aw-19{
+		background-image: url(../assets/look6-wa19-text.svg)
+	}
+
+	.position-x{
+		background-position-x: 0px;
+	}
+
+	/* section 5 */
+	.split-background-y{
+		flex-direction: column;
+	}
+
+	.split-y-image{
+		width: 100%;
+		height: 40vh;
+		background-attachment: fixed;
+	}
+
+	.look-7{
+		background-image: url(../assets/look7-look7.st.jpg)
+	}
+
+	.look-8{
+		background-image: url(../assets/look8-look8.st.jpg)
+	}
+
+	.l09{
+		background-image: url(../assets/look9-l09-text.svg);
+	}
+
+	.look-9{
+		background-image: url(../assets/look9-look9.st.jpg);
+	}
+
+	.the-great{
+		background-image: url(../assets/look9-great-text1.svg);
+	}
+
+	.l10{
+		background-image: url(../assets/look10-l10-text.svg)
+	}
+
+	.look-10{
+		background-image: url(../assets/look10-look10.st.jpg)
+	}
+
+	.bottom-50{
+		padding-bottom: 50px;
+	}
+}
+
+@media screen and (min-width: 481px){
+	.left-image{
+		background-position-x: -35vw;
+		background-repeat: no-repeat;
+	}
+
+	.right-image{
+    	background-position-x: 29vw;
+		background-repeat: no-repeat;
+	}
+}
+
+@media screen and (min-width: 700px){
+	.left-image{
+		background-position-x: -22vw;
+		background-repeat: no-repeat;
+	}
+
+	.right-image{
+    	background-position-x: 42vw;
+		background-repeat: no-repeat;
+	}
+}
+
+@media screen and (min-width: 1000px){
+	.left-image{
+		background-position-x: -12vw;
+		background-repeat: no-repeat;
+	}
+
+	.right-image{
+    	background-position-x: 42vw;
+		background-repeat: no-repeat;
+	}
+
+	.section-center-image{
+		background-position: top
+	}
+
+	.split-y-image{
+		background-repeat: no-repeat;
+    	background-position: top;
+	}
+
+	.column-1-row-3{
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	.section-svg{
+		height: 100vh;
+		width: 20vw;
+		background-repeat: no-repeat;
+		background-size: 100px;
+		background-position: center;
+	}
+	
+	.section-center-image{
+		height: 100vh;
+		width: 80vw;
+		background-size: contain;
+	}
+
+	.look-6{
+		background-position: center;
+	}
+
+	.left-text{
+		left: 9vw;
+		width: 75px
+	}
+
+	.right-text{
+		right: 9vw;
+		width: 130px
+	}
+
+	.portrait-image{
+		width: 43vw;
+	}
+
+	.l05,
+	.l06,
+	.l09,
+	.l10{
+		background-size: 75px
+	}
+	
+	.aw-19{
+		background-size: 80px
+	}
+
+	.knitwear,
+	.the-great{
+		background-size: 120px
+	}
+
+	.split-background{
+		display: flex;
+		justify-content: space-evenly;
+		height: 100vh;
+		margin-top: 0px
+	}
+	.split-background-y{
+		flex-direction: row;
+	}
+
+	.split-y-image{
+		width: 40vw;
+		height: 100vh;
+		background-attachment: fixed;
+	}
+
+	.look-7{
+		background-position: 10%;
+		background-size: contain
+	}
+
+	.look-8{
+		background-size: contain;
+		background-position: 97%;
+	}
+}
+
+@media screen and (min-width: 1300px){
+	.left-image{
+		background-position-x: 0vw;
+		background-repeat: no-repeat;
+	}
+
+	.right-image{
+    	background-position-x: 55vw;
+		background-repeat: no-repeat;
+	}
+}
+
