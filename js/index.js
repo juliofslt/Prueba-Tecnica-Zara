@@ -31,7 +31,6 @@ function removeListener(){
 	const SecondGreatKnitwear2AppearOnScreen = offsetBottomSecondGreatKnitwear2 - bottomOfWindow
 
 	if( SecondGreatKnitwear2AppearOnScreen <=-40 ){
-		console.log('removed')
 		document.removeEventListener('scroll', removeListener)
 	}
 
@@ -67,8 +66,6 @@ document.addEventListener('scroll', () => {
 
 	const offsetBottomGreatKnitwear2 = greatKnitwear2.offsetTop + greatKnitwear2.height
 	const greatKnitwear2AppearOnScreen = offsetBottomGreatKnitwear2 - bottomOfWindow
-
-	console.log(SecondGreatKnitwear2AppearOnScreen)
 
 	if(window.scrollY > 60 && stateHolder.womanText === true){
 		addOrRemoveHiddenClass([womanText, womanText2], 'remove')
