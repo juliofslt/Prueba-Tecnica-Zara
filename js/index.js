@@ -86,7 +86,7 @@ document.addEventListener('scroll', () => {
 
 	}
 
-	if(secondWomanTextAppearOnScreen <= 0 && stateHolder.secondWomanText === true){
+	if(secondWomanTextAppearOnScreen <= -100 && stateHolder.secondWomanText === true){
 		addOrRemoveHiddenClass([secondWomanText, secondWomanText2], 'remove')
 		updateState(['secondWomanText', 'secondWomanText2'], false)
 	}
