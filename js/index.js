@@ -1,6 +1,7 @@
 const womanText = document.getElementById('firstWomanText')
 const womanText2 = document.getElementById('firstWomanText2')
 const greatKnitwear = document.getElementById('firstGreatKnitwear')
+const greatKnitwear2 = document.getElementById('firstGreatKnitwear2')
 
 
 const secondWomanText = document.getElementById('secondWomanText') 
@@ -14,6 +15,7 @@ const stateHolder = {
 	womanText: true,
 	womanText2: true,
 	greatKnitwear: true,
+	greatKnitwear2: true,
 	secondWomanText: true,
 	secondWomanText2: true,
 	secondGreatKnitwear: true,
@@ -63,6 +65,9 @@ document.addEventListener('scroll', () => {
 	const offsetBottomSecondGreatKnitwear2 = secondGreatKnitwear2.offsetTop + secondGreatKnitwear2.height
 	const SecondGreatKnitwear2AppearOnScreen = offsetBottomSecondGreatKnitwear2 - bottomOfWindow
 
+	const offsetBottomGreatKnitwear2 = greatKnitwear2.offsetTop + greatKnitwear2.height
+	const greatKnitwear2AppearOnScreen = offsetBottomGreatKnitwear2 - bottomOfWindow
+
 	console.log(SecondGreatKnitwear2AppearOnScreen)
 
 	if(window.scrollY > 60 && stateHolder.womanText === true){
@@ -70,12 +75,12 @@ document.addEventListener('scroll', () => {
 		updateState(['womanText', 'womanText2'], false)
 	}
 
-	if(window.scrollY > 89 && stateHolder.greatKnitwear === true){
-		addOrRemoveHiddenClass([greatKnitwear], 'remove')
-		updateState(['greatKnitwear'], false)
+	if(greatKnitwear2AppearOnScreen < 0 && stateHolder.greatKnitwear2 === true){
+		addOrRemoveHiddenClass([greatKnitwear, greatKnitwear2], 'remove')
+		updateState(['greatKnitwear', 'greatKnitwear2'], false)
 	}
 
-	if(window.scrollY > 150 && stateHolder.greatKnitwear === false){
+	if(greatKnitwear2AppearOnScreen < -60 && stateHolder.greatKnitwear === false){
 		addOrRemoveHiddenClass([womanText, womanText2, greatKnitwear], 'add')
 		updateState(['womanText', 'womanText2','greatKnitwear'], false)
 
