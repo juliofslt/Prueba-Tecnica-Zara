@@ -2,10 +2,13 @@ const womanText = document.getElementById('firstWomanText')
 const womanText2 = document.getElementById('firstWomanText2')
 const greatKnitwear = document.getElementById('firstGreatKnitwear')
 
-const secondWomanText = document.getElementById('secondWomanText')
+
+const secondWomanText = document.getElementById('secondWomanText') 
 const secondWomanText2 = document.getElementById('secondWomanText2') 
 const secondGreatKnitwear = document.getElementById('secondGreatKnitwear')
 const secondGreatKnitwear2 = document.getElementById('secondGreatKnitwear2')
+
+// Element's height
 
 const stateHolder = {
 	womanText: true,
@@ -17,15 +20,19 @@ const stateHolder = {
 	secondGreatKnitwear2: true
 }
 
+
+
 function removeListener(){
 
-	if( window.scrollY > 7500 ){
+	const bottomOfWindow = window.scrollY + window.innerHeight
+	const offsetBottomSecondGreatKnitwear2 = secondGreatKnitwear2.offsetTop + secondGreatKnitwear2.height
+	const SecondGreatKnitwear2AppearOnScreen = offsetBottomSecondGreatKnitwear2 - bottomOfWindow
+
+	if( SecondGreatKnitwear2AppearOnScreen <=-40 ){
+		console.log('removed')
 		document.removeEventListener('scroll', removeListener)
 	}
 
-	if( window.scrollY >= 7150 ){
-		document.removeEventListener('scroll', removeListener)
-	}
 }
 
 const addOrRemoveHiddenClass = (arr, action) => {
@@ -48,6 +55,15 @@ const updateState = (stringArr, value) => {
 }
 
 document.addEventListener('scroll', () => {
+	const bottomOfWindow = window.scrollY + window.innerHeight
+
+	const offsetBottomSecondWomanText = secondWomanText.offsetTop + secondWomanText.height
+	const secondWomanTextAppearOnScreen = offsetBottomSecondWomanText - bottomOfWindow // neg val -> on screen
+
+	const offsetBottomSecondGreatKnitwear2 = secondGreatKnitwear2.offsetTop + secondGreatKnitwear2.height
+	const SecondGreatKnitwear2AppearOnScreen = offsetBottomSecondGreatKnitwear2 - bottomOfWindow
+
+	console.log(SecondGreatKnitwear2AppearOnScreen)
 
 	if(window.scrollY > 60 && stateHolder.womanText === true){
 		addOrRemoveHiddenClass([womanText, womanText2], 'remove')
@@ -65,41 +81,20 @@ document.addEventListener('scroll', () => {
 
 	}
 
-	if(window.innerWidth < 1000){
-	
-		if(window.scrollY > 6750 && stateHolder.secondWomanText === true){
-			addOrRemoveHiddenClass([secondWomanText, secondWomanText2], 'remove')
-			updateState(['secondWomanText', 'secondWomanText2'], false)
-		}
-	
-		if(window.scrollY > 7000 && stateHolder.secondGreatKnitwear === true){
-			addOrRemoveHiddenClass([secondGreatKnitwear, secondGreatKnitwear2], 'remove')
-			updateState(['secondGreatKnitwear', 'secondGreatKnitwear2'], false)
-		}
-	
-		if(window.scrollY > 7150 && stateHolder.secondGreatKnitwear === false){
-			addOrRemoveHiddenClass([secondWomanText, secondWomanText2, secondGreatKnitwear], 'add')
-			updateState(['secondGreatKnitwear'], false)
-		}
+	if(secondWomanTextAppearOnScreen <= 0 && stateHolder.secondWomanText === true){
+		addOrRemoveHiddenClass([secondWomanText, secondWomanText2], 'remove')
+		updateState(['secondWomanText', 'secondWomanText2'], false)
 	}
-	else{	
-	
-		if(window.scrollY > 7250 && stateHolder.secondWomanText === true){
-			addOrRemoveHiddenClass([secondWomanText, secondWomanText2], 'remove')
-			updateState(['secondWomanText', 'secondWomanText2'], false)
-		}
-	
-		if(window.scrollY > 7433 && stateHolder.secondGreatKnitwear === true){
-			addOrRemoveHiddenClass([secondGreatKnitwear, secondGreatKnitwear2], 'remove')
-			updateState(['secondGreatKnitwear', 'secondGreatKnitwear2'], false)
-		}
-	
-		if(window.scrollY > 7500 && stateHolder.secondGreatKnitwear === false){
-			addOrRemoveHiddenClass([secondWomanText, secondWomanText2, secondGreatKnitwear], 'add')
-			updateState(['secondGreatKnitwear'], false)
-		}
+
+	if(SecondGreatKnitwear2AppearOnScreen <= 0 && stateHolder.secondGreatKnitwear === true){
+		addOrRemoveHiddenClass([secondGreatKnitwear, secondGreatKnitwear2], 'remove')
+		updateState(['secondGreatKnitwear', 'secondGreatKnitwear2'], false)
+	}
+
+	if(SecondGreatKnitwear2AppearOnScreen <=-30 && stateHolder.secondGreatKnitwear === false){
+		addOrRemoveHiddenClass([secondWomanText, secondWomanText2, secondGreatKnitwear], 'add')
+		updateState(['secondGreatKnitwear'], false)
 	}
 })
 
 document.addEventListener('scroll', removeListener)
-
